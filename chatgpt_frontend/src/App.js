@@ -16,6 +16,7 @@ function App() {
   const [inputMessage, setInputMessage] = useState("");
   const messagesEndRef = useRef(null);
   const [isAssistantTyping, setIsAssistantTyping] = useState(false);
+  const [showPanel, setShowPanel] = useState(false);
 
   useEffect(() => {
     fetchChats();
@@ -36,6 +37,7 @@ function App() {
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "auto" });
   };
+  
 
   const fetchChats = async () => {
     try {
@@ -137,7 +139,7 @@ function App() {
   return (
     <div className="App">
       <div className="headline">
-        <h1> ChatGPT AI Dedicated Clone for your Business</h1>
+        <h1> ChatGPT AI Agents for your Business</h1>
       </div>
       
       <div className="chat-container">
@@ -162,7 +164,7 @@ function App() {
           messagesEndRef={messagesEndRef}
         />
       </div>
-      <div className="footer">
+      {/* <div className="footer">
         <a
           href="https://www.marmlax.com"
           target="_blank"
@@ -171,7 +173,7 @@ function App() {
           <FaGithub className="icon" />
           Made by Muhammad Bin Tanveer - Marmlax
         </a>
-      </div>
+      </div> */}
     </div>
   );
 }

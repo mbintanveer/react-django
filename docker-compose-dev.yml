@@ -22,6 +22,7 @@ services:
       - chatgpt-network
     volumes:
       - ./chatgpt_frontend:/usr/src/app
+      - /usr/src/app/node_modules
   backend:
     build:
       context: ./chatgpt_backend
@@ -37,6 +38,8 @@ services:
                gunicorn --bind 0.0.0.0:8090 chatgpt_backend.wsgi:application"
     networks:
       - chatgpt-network
+    ports:
+      - 8000:8000
 
   db:
     image: postgres:13.6
