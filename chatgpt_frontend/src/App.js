@@ -137,9 +137,11 @@ function App() {
   return (
     <div className="App">
       <div className="headline">
-        <h1>⚡ ChatGPT Clone ⚡</h1>
+        <h1> ChatGPT AI Dedicated Clone for your Business</h1>
       </div>
+      
       <div className="chat-container">
+        <br></br>
         <div className="chat-history-container">
           <button className="new-chat-button" onClick={createNewChat}>
             <strong>+ New Chat</strong>
@@ -162,12 +164,12 @@ function App() {
       </div>
       <div className="footer">
         <a
-          href="https://github.com/fatihbaltaci/chatgpt-clone"
+          href="https://www.marmlax.com"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaGithub className="icon" />
-          View on GitHub
+          Made by Muhammad Bin Tanveer - Marmlax
         </a>
       </div>
     </div>

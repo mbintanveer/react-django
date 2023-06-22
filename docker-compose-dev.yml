@@ -6,7 +6,7 @@ services:
     ports:
       - '8090:80'
     volumes:
-      - ./nginx_reverse_proxy/default_rp.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx_reverse_proxy/default_rp-dev.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - frontend
       - backend
@@ -15,12 +15,13 @@ services:
   frontend:
     build:
       context: ./chatgpt_frontend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     depends_on:
       - backend
     networks:
       - chatgpt-network
-
+    volumes:
+      - ./chatgpt_frontend:/usr/src/app
   backend:
     build:
       context: ./chatgpt_backend
